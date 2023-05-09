@@ -131,7 +131,7 @@ void inordenInverso(nodo* raiz) {
         return;
     }
     inordenInverso(raiz->der);  // primero visitar hijo derecho
-    cout << "Número de camisa: " << raiz->valu << endl;
+    cout << "NÃºmero de camisa: " << raiz->valu << endl;
     cout << "Nombre del atleta: " << raiz->nom << endl;
     cout << "Tiempo total: " << raiz->tiempototal << endl;
     cout << "Promedio de tiempos: " << raiz->prom << endl << endl;
@@ -165,7 +165,7 @@ int registraTimp() {
     int numcorredor;
     int bandera = 0;
     preorden(raiz);
-    cout << "Registre el número del corredor:" << endl;
+    cout << "Registre el nÃºmero del corredor:" << endl;
     cin >> numcorredor;
     nodo *aux = raiz;
 
@@ -182,7 +182,7 @@ int registraTimp() {
         bandera = 1;
         aux->ronda++;
         cout << "Es el corredor: " << aux->nom << " :: "<<" ronda: "<<aux->ronda<<" "<<"Tiempo: "<< aux->tiempo << endl;
-        cout << "Registre el tiempo de la última vuelta:" << endl;
+        cout << "Registre el tiempo de la Ãºltima vuelta:" << endl;
         cin >> aux->tiempo;
         
           
@@ -205,7 +205,7 @@ int registraTimp() {
     int numcorredor;
     int bandera = 0;
     preorden(raiz);
-    cout << "Registre el número del corredor:" << endl;
+    cout << "Registre el nÃºmero del corredor:" << endl;
     cin >> numcorredor;
     nodo *aux = raiz;
 
@@ -222,13 +222,13 @@ int registraTimp() {
         bandera = 1;
         aux->ronda++;
         cout << "Es el corredor: " << aux->nom << " :: "<<" ronda: "<<aux->ronda<<" "<<"Tiempo: "<< aux->tiempo << endl;
-        cout << "Registre el tiempo de la última vuelta:" << endl;
+        cout << "Registre el tiempo de la Ãºltima vuelta:" << endl;
         cin >> aux->tiempo;
         aux->tiempototal += aux->tiempo;
         aux->prom = aux->tiempototal / aux->ronda;
     }
     else {
-        cout << "No se encontró el corredor." << endl;
+        cout << "No se encontrÃ³ el corredor." << endl;
     }
 
     if (bandera == 1) {
@@ -238,7 +238,7 @@ int registraTimp() {
         return 1;
     }
     
-    inordenInverso(raiz); // llamar a la función para imprimir los resultados en orden descendente
+    inordenInverso(raiz); // llamar a la funciÃ³n para imprimir los resultados en orden descendente
 }
 
 
@@ -246,8 +246,9 @@ int registraTimp() {
 
 
 int registrar() {
-    //nodo *aux = new nodo;
-      nodo *aux  = (struct nodo *) malloc (sizeof(struct nodo));
+   nodo *aux = new nodo;
+	//por problema con la  memoria dinamica malloc en los apuntadore  contador fallan  
+   //   nodo *aux  = (struct nodo *) malloc (sizeof(struct nodo));
     cout << "Ingresar el mnumero de Camisa: ";
     cin >> aux->valu;
     cout << "Ingresar el nombre del Atleta: ";
@@ -266,11 +267,11 @@ int registrar() {
 }
   int cargar(){
   	
-  	const int total = 200; // Número total de elementos a procesar
+  	const int total = 200; // NÃºmero total de elementos a procesar
   const int delay = 1000000; // Tiempo de espera entre iteraciones en microsegundos
 
   for (int i = 0; i <= total; ++i) {
-    // Limpiar la línea de la barra de progreso
+    // Limpiar la lÃ­nea de la barra de progreso
     std::cout << "\r";
     std::cout.flush();
 
