@@ -8,9 +8,9 @@ using namespace std;
 struct nodo {
     int valu;
     char nom[30];
-    int tiempo= 0 ;
-    int ronda=0;
-     int altura =1;
+    int tiempo ;
+    int ronda;
+     int altura;
    float prom;
      int tiempototal;
     nodo *izq;
@@ -246,9 +246,14 @@ int registraTimp() {
 
 
 int registrar() {
-   nodo *aux = new nodo;
-	//por problema con la  memoria dinamica malloc en los apuntadore  contador fallan  
-   //   nodo *aux  = (struct nodo *) malloc (sizeof(struct nodo));
+   //nodo *aux = new nodo;
+    nodo *aux  = (struct nodo *) malloc (sizeof(struct nodo));
+    aux->tiempo=0;
+    aux->ronda=0;
+    aux->prom=0;
+    aux->tiempototal=0;
+    aux->altura=1;
+	
     cout << "Ingresar el mnumero de Camisa: ";
     cin >> aux->valu;
     cout << "Ingresar el nombre del Atleta: ";
@@ -265,6 +270,8 @@ int registrar() {
     }
     return 0;
 }
+
+
   int cargar(){
   	
   	const int total = 200; // Número total de elementos a procesar
