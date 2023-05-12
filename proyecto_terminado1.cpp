@@ -130,12 +130,12 @@ void inordenInverso(nodo* raiz) {
     if (raiz == NULL) {
         return;
     }
-    inordenInverso(raiz->der);  // primero visitar hijo derecho
+    inordenInverso(raiz->izq);  // primero visitar hijo izquierdo
     cout << "Número de camisa: " << raiz->valu << endl;
     cout << "Nombre del atleta: " << raiz->nom << endl;
     cout << "Tiempo total: " << raiz->tiempototal << endl;
     cout << "Promedio de tiempos: " << raiz->prom << endl << endl;
-    inordenInverso(raiz->izq);  // luego visitar hijo izquierdo
+    inordenInverso(raiz->der);  // luego visitar hijo derecho
 }
 
 
